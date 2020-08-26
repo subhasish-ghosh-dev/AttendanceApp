@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
                 //Log.d("Reading: ", "Reading all Attendance..");
                 List<Attendance> attendance = db.getAllAttendance();
-
+                String log = "\n";    
                 for (Attendance at : attendance) {
-                    String log = "Id: " + at.getId() + " ,Roll NO: " + at.getRollNo() + " ,Class Date: " +
+                     log+="Id: " + at.getId() + " ,Roll NO: " + at.getRollNo() + " ,Class Date: " +
                             at.getDateClass() + " , Course Code: " + at.getCourseCode() +" , Class Attended: " + at.isAttended();
                     Toast toast=Toast.makeText(getApplicationContext(),log,Toast.LENGTH_SHORT);
                     toast.setMargin(50,50);
