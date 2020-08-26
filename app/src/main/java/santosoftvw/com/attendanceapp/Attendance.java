@@ -10,8 +10,7 @@ public class Attendance {
     public Attendance(){
 
     }
-    public Attendance(int _id, String _roll, String _classDt, String _codeCourse, boolean _attended){
-        this.id=_id;
+    public Attendance(String _roll, String _classDt, String _codeCourse, boolean _attended){
         this.rollNo=_roll;
         this.dateClass =_classDt;
         this.courseCode=_codeCourse;

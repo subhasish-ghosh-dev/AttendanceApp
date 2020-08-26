@@ -19,7 +19,7 @@ public class AttendanceDb extends SQLiteOpenHelper {
     private static final String KEY_COURSE = "course";
     private static final String KEY_ATTENDED = "attended";
 
-    public AttendanceDb( Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public AttendanceDb( Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

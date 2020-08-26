@@ -3,8 +3,11 @@ package santosoftvw.com.attendanceapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     //instance variable
@@ -13,12 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText txtCourse;
     private CheckBox chkAttend;
     private Button btnSave;
-    /*
-    editTxtRollNo
-    editTextDate
-    editTxtCourse
-    chkAttend
-     */
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +28,26 @@ public class MainActivity extends AppCompatActivity {
         txtCourse = (EditText)findViewById(R.id.editTxtCourse);
         chkAttend = (CheckBox)findViewById(R.id.chkAttend);
         btnSave = (Button)findViewById(R.id.btnSave);
+        final AttendanceDb db = new AttendanceDb(this);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //txtRollNo.setText("Button Clicked");
-                //SQLite Database
-                
+
+                Log.d("Insert: ", "Inserting ..");
+
+                db.addAttendance(new Attendance( txtRollNo.getText().toString(), txtDate.getText().toString(),
+                        txtCourse.getText().toString(), chkAttend.isChecked()));
+
+                /*Log.d("Reading: ", "Reading all Attendance..");
+                List<Attendance> attendance = db.getAllAttendance();
+
+                for (Attendance at : attendance) {
+                    String log = "Id: " + at.getId() + " ,Roll NO: " + at.getRollNo() + " ,Class Date: " +
+                            at.getDateClass() + " , Course Code: " + at.getCourseCode() +" , Class Attended: " + at.isAttended();
+
+                    Log.d("Attendance: ", log);
+                }*/
+
             }
         });
 
