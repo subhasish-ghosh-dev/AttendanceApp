@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText txtCourse;
     private CheckBox chkAttend;
     private Button btnSave;
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
