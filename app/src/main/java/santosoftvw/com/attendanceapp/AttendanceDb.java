@@ -27,7 +27,7 @@ public class AttendanceDb extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String CREATE_ATTENDANCE_TABLE = "CREATE TABLE " + TABLE_ATTENDANCE + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_ROLL + " TEXT,"
-                + KEY_CLASS + " TEXT" + KEY_COURSE + "TEXT" + KEY_ATTENDED + "TEXT" + ")";
+                + KEY_CLASS + " TEXT, " + KEY_COURSE + " TEXT, " + KEY_ATTENDED + " TEXT " + ")";
         sqLiteDatabase.execSQL(CREATE_ATTENDANCE_TABLE);
     }
 
