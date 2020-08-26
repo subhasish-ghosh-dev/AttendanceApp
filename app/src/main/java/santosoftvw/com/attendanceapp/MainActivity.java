@@ -38,15 +38,18 @@ public class MainActivity extends AppCompatActivity {
                 db.addAttendance(new Attendance( txtRollNo.getText().toString(), txtDate.getText().toString(),
                         txtCourse.getText().toString(), chkAttend.isChecked()));
 
-                /*Log.d("Reading: ", "Reading all Attendance..");
+                //Log.d("Reading: ", "Reading all Attendance..");
                 List<Attendance> attendance = db.getAllAttendance();
 
                 for (Attendance at : attendance) {
                     String log = "Id: " + at.getId() + " ,Roll NO: " + at.getRollNo() + " ,Class Date: " +
                             at.getDateClass() + " , Course Code: " + at.getCourseCode() +" , Class Attended: " + at.isAttended();
+                    Toast toast=Toast.makeText(getApplicationContext(),log,Toast.LENGTH_SHORT);
+                    toast.setMargin(50,50);
+                    toast.show();
+                    //Log.d("Attendance: ", log);
+                }
 
-                    Log.d("Attendance: ", log);
-                }*/
 
             }
         });
