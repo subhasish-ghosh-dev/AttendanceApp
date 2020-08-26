@@ -9,8 +9,8 @@ import android.widget.*;
 public class MainActivity extends AppCompatActivity {
     //instance variable
     private EditText txtRollNo;
-    private EditText txtRollNo;
-    private EditText txtRollNo;
+    private EditText txtDate;
+    private EditText txtCourse;
     private CheckBox chkAttend;
     private Button btnSave;
     /*
@@ -26,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         txtRollNo = (EditText)findViewById(R.id.editTxtRollNo);
+        txtDate = (EditText)findViewById(R.id.editTextDate);
+        txtCourse = (EditText)findViewById(R.id.editTxtCourse);
+        chkAttend = (CheckBox)findViewById(R.id.chkAttend);
         btnSave = (Button)findViewById(R.id.btnSave);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
