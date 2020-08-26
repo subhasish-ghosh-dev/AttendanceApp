@@ -40,7 +40,7 @@ public class AttendanceDb extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public void addContact(Attendance attendance) {
+    public void addAttendance(Attendance attendance) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
