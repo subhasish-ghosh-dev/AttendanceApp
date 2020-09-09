@@ -2,6 +2,7 @@ package santosoftvw.com.attendanceapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
                 db.addAttendance(new Attendance( txtRollNo.getText().toString(), txtDate.getText().toString(),
                         txtCourse.getText().toString(), chkAttend.isChecked()));
-
+                /*
                 //Log.d("Reading: ", "Reading all Attendance..");
                 List<Attendance> attendance = db.getAllAttendance();
                 String log = "\n";    
@@ -48,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
                     toast.setMargin(50,50);
                     toast.show();
                     //Log.d("Attendance: ", log);
-                }
-
-
+                }*/
+                Intent intent = new Intent(MainActivity.this,AttendanceActivity.class);
+                startActivity(intent);
             }
         });
 
