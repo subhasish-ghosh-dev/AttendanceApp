@@ -2,6 +2,7 @@ package santosoftvw.com.attendanceapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.TableLayout;
@@ -22,13 +23,17 @@ public class AttendanceActivity extends AppCompatActivity {
         tableLayout = (TableLayout) findViewById(R.id.tableLayout);
         tableLayout.setColumnStretchable(0, true);
         tableLayout.setColumnStretchable(1, true);
+
         final AttendanceDb db = new AttendanceDb(this);
         List<Attendance> attendance = db.getAllAttendance();
 
         for (Attendance at : attendance) {
             TableRow tableRow = new TableRow(this);
+            tableRow.setBackgroundResource(R.drawable.border);
             TextView roll = new TextView(this);
+            roll.setBackgroundResource(R.drawable.border);
             TextView attended = new TextView(this);
+            attended.setBackgroundResource(R.drawable.border);
             roll.setText(at.getRollNo() );
             attended.setText(String.valueOf(at.isAttended()));
             roll.setTextSize(15);
